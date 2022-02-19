@@ -1,0 +1,90 @@
+.promo {
+    min-height: 1067px;
+    background: url('../img/bg/bg1.png'), url('../img/bg/BG.png'), ;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-position-x: 98%, 101%;
+    background-size: 58%, 43%;
+    padding-top: 30px;
+    &__header {
+        width: 847px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__item {
+        list-style-type: none;
+        margin-right: 30px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        color: #000000;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            color: $maincolor;
+        }
+    }
+    &__btn {
+        width: 80px;
+        height: 30px;
+        padding: 2px 8px;
+        background-color: $maincolor;
+        border: none;
+        color: #FFFFFF;
+        border-radius: 15px;
+        &:hover {
+            color: #000000;
+        }
+    }
+}
+
+.title {
+    margin-top: 141px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 75px;
+    line-height: 91px;
+    color: #000000;
+}
+
+.subtitle {
+    max-width: 570px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #888888;
+}
+
+.btn {
+    margin-top: 40px;
+    width: 182px;
+    height: 50px;
+    background-color: $maincolor;
+    border: none;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-align: left;
+    padding-left: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 28px;
+    &__round {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 100%;
+    }
+    
+}
