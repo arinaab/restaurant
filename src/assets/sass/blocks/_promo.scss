@@ -11,80 +11,51 @@
         display: flex;
         justify-content: space-between;
     }
-}
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &__item {
-        list-style-type: none;
-        margin-right: 30px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        cursor: pointer;
-        color: #000000;
-        &:last-child {
-            margin-right: 0;
-        }
-        &:hover {
-            color: $maincolor;
-        }
+    &__info {
+        margin-top: 110px;
+        width: 1170px;
+        height: 217px;
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 133px 60px 87px;
     }
-    &__btn {
-        width: 80px;
-        height: 30px;
-        padding: 2px 8px;
-        background-color: $maincolor;
-        border: none;
-        color: #FFFFFF;
-        border-radius: 15px;
-        &:hover {
-            color: #000000;
-        }
+    &__time {
+        max-width: 196px;
+        height: 97px;
     }
-}
-
-.title {
-    margin-top: 141px;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 75px;
-    line-height: 91px;
-    color: #000000;
-}
-
-.subtitle {
-    max-width: 570px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #888888;
-}
-
-.btn {
-    margin-top: 40px;
-    width: 182px;
-    height: 50px;
-    background-color: $maincolor;
-    border: none;
-    color: #FFFFFF;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    text-align: left;
-    padding-left: 19px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 28px;
-    &__round {
+    &__img {
         width: 40px;
         height: 40px;
-        background-color: #fff;
+        background-color: $maincolor;
         border-radius: 100%;
+        text-align: center;
+        margin: 0 auto;
+        img {
+            display: inline-block;
+            margin-top: 11px;
+        }
     }
-    
+    &__descr {
+        margin-top: 15px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        color: #000000;
+    }
+    &__text {
+        margin-top: 6px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 13px;
+        color: #888888;
+    }
+    &__phone {
+        a {
+            text-decoration: none;
+            color: #000000;
+            &:hover {
+                color: $maincolor;
+            }
+        }
+    }
 }

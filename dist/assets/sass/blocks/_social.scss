@@ -1,0 +1,18 @@
+.social {
+    margin-top: 40px;
+    width: 230px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__item {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(241, 98, 20, 0.15);
+        border-radius: 100%;
+        text-align: center;
+        img {
+            vertical-align: bottom;
+        }
+    }
+}
