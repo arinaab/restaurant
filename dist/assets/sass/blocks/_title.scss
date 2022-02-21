@@ -5,4 +5,11 @@
     font-size: 75px;
     line-height: 91px;
     color: #000000;
+    &_h2 {
+        font-weight: bold;
+        font-size: 40px;
+        color: #000000;
+        margin-top: 6px;
+        line-height: 60px;
+    }
 }

@@ -1,0 +1,13 @@
+.important {
+    min-height: 700px;
+    padding: 155px 0 158px 0;
+    background: url('../img/bg/bg2.png') no-repeat;
+    background-position: 0% 82%;
+    background-size: 53%;
+    
+    &__text {
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+}

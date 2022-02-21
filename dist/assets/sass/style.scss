@@ -17,6 +17,7 @@
 .container {
     width: 1170px;
     margin: 0 auto;
+    position: relative;
 }
 
 @import 'variables';
@@ -26,3 +27,5 @@
 @import 'blocks/subtitle';
 @import 'blocks/btn';
 @import 'blocks/social';
+@import 'blocks/important';
+@import 'blocks/h3';
