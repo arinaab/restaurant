@@ -90,10 +90,83 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cards */ "./src/js/modules/cards.js");
 
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  Object(_modules_cards__WEBPACK_IMPORTED_MODULE_0__["default"])();
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/cards.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/cards.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const cards = () => {
+  const getResourse = async path => {
+    const res = await fetch(path);
+
+    if (!res.ok) {
+      throw new Error(`Could not fetch ${path}, status: ${res.status}`);
+    }
+
+    return await res.json();
+  };
+
+  const createCards = response => {
+    // console.log(response);
+    console.log(response.items);
+    let items = response.items;
+    items.forEach(_ref => {
+      let {
+        src,
+        alt,
+        subtitle,
+        grade,
+        price
+      } = _ref;
+      const elem = document.createElement('div');
+      elem.classList.add('popular__item');
+      elem.innerHTML = `
+                <div class="popular__img">
+                    <img src=${src} alt=${alt}>
+                </div>
+                <div class="popular__descr">
+                    <div class="popular__subtitle">${subtitle}</div>
+                    <div class="popular__grade"><span>&#9733;</span>${grade}</div>
+                    <button class="btn btn_popular">Add To Card</button>
+                    <div class="popular__price">${price}</div>
+                </div>
+            `;
+      document.querySelector('.popular__items').append(elem);
+    });
+  };
+
+  getResourse('../assets/db.json').then(res => {
+    console.log(res);
+    createCards(res);
+  });
+  document.querySelector('.btn_more').addEventListener('click', event => {
+    getResourse('../assets/db.json').then(res => {
+      console.log(res);
+      createCards(res);
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cards);
 
 /***/ })
 

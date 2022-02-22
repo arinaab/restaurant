@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "src": "assets/img/block4/sandv.png",
+            "alt": "sandwhich",
+            "subtitle": "Gyro Sandwhich",
+            "grade": "4.7",
+            "price": "$350"
+        },
+        {
+            "src": "assets/img/block4/enchilada.png",
+            "alt": "enchilada",
+            "subtitle": "Enchilada",
+            "grade": "4.7",
+            "price": "$390"
+        },
+        {
+            "src": "assets/img/block4/beans.png",
+            "alt": "beans",
+            "subtitle": "Green Beans",
+            "grade": "4.9",
+            "price": "$230"
+        },
+        {
+            "src": "assets/img/block4/pizza.png",
+            "alt": "pizza",
+            "subtitle": "Pizza",
+            "grade": "4.9",
+            "price": "$150"
+        },
+        {
+            "src": "assets/img/block4/chiken.png",
+            "alt": "chiken",
+            "subtitle": "Chicken Pot Pie",
+            "grade": "4.7",
+            "price": "$260"
+        },
+        {
+            "src": "assets/img/block4/salad.png",
+            "alt": "salad",
+            "subtitle": "Green Salad",
+            "grade": "4.9",
+            "price": "$100"
+        }
+    ]
+}
