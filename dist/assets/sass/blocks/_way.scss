@@ -1,0 +1,24 @@
+.way {
+    min-height: 860px;
+    padding: 230px 0;
+    &__block {
+        width: 1170px;
+        height: 400px;
+        margin: 0 auto;
+        padding: 86px 0 65px 30px;
+        background: url('../icons/block5/way.png');
+        border-radius: 60px 0;
+        position: relative;
+    }
+    &__phone {
+        width: 278px;
+        height: 600px;
+        position: absolute;
+        top: -44%;
+        left: 42%;
+        &_right {
+            top: -30%;
+            left: 69%;
+        }
+    }
+}

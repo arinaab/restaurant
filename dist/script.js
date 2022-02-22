@@ -95,26 +95,29 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cards */ "./src/js/modules/cards.js");
+/* harmony import */ var _modules_popularItems__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/popularItems */ "./src/js/modules/popularItems.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  Object(_modules_cards__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_popularItems__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', 'button[data-next]', 'button[data-prev]');
 });
 
 /***/ }),
 
-/***/ "./src/js/modules/cards.js":
-/*!*********************************!*\
-  !*** ./src/js/modules/cards.js ***!
-  \*********************************/
+/***/ "./src/js/modules/popularItems.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/popularItems.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const cards = () => {
+const popularItems = () => {
   const getResourse = async path => {
     const res = await fetch(path);
 
@@ -166,7 +169,49 @@ const cards = () => {
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (cards);
+/* harmony default export */ __webpack_exports__["default"] = (popularItems);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const slider = (slideSelector, prevSelector, nextSelector) => {
+  const slides = document.querySelectorAll(slideSelector),
+        prevBtn = document.querySelector(prevSelector),
+        nextBtn = document.querySelector(nextSelector);
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    slides.forEach(slide => slide.style.display = 'none');
+    console.log(slides.length);
+    slides[slideIndex - 1].style.display = 'block';
+  }
+
+  function plusSlide(n) {
+    showSlides(slideIndex += n);
+  }
+
+  prevBtn.addEventListener('click', () => plusSlide(-1));
+  nextBtn.addEventListener('click', () => plusSlide(+1));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (slider);
 
 /***/ })
 

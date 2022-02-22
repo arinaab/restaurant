@@ -1,0 +1,10 @@
+.feed {
+    padding-top: 97px;
+    padding-bottom: 159px;
+    background: url('../img/bg/bg-6-1.png'), url('../img/bg/bg-6-2.png');
+    background-repeat: no-repeat;
+    background-position: top left, 83% 90%;
+    &__btns {
+        margin-left: 19%;
+    }
+}

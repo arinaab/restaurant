@@ -1,0 +1,35 @@
+.slider {
+    margin-top: 118px;
+    max-width: 570px;
+    min-height: 230px;
+    &__info {
+        width: 205px;
+        height: 80px;
+        display: grid;
+        grid-template-columns: 80px 125px;
+        grid-template-rows: 30px 30px;
+        gap: 3px 15px;
+        margin: 0 auto;
+    }
+    &__name {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #000000;
+    }
+    &__descr {
+        font-size: 13px;
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 8px;
+        font-weight: normal;
+        font-size: 13px;
+        color: #888888;
+    }
+    &__text {
+        margin-top: 54px;
+        text-align: center;
+        font-size: 16px;
+        color: #888888;
+    }
+}

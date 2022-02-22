@@ -1,4 +1,4 @@
-const cards = () => {
+const popularItems = () => {
 
     const getResourse = async (path) => {
         const res = await fetch(path);
@@ -50,4 +50,4 @@ const cards = () => {
     });
 };
 
-export default cards;
+export default popularItems;

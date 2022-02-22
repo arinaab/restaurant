@@ -1,0 +1,13 @@
+.card {
+    background-color:  rgba(29,29,29, .9);
+    width: 1180px;
+    min-height: 450px;
+    position: fixed;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+    &__items {
+        display: flex;
+    }
+}
