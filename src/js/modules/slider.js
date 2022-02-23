@@ -17,7 +17,6 @@ const slider = (slideSelector, prevSelector, nextSelector) => {
         }
 
         slides.forEach(slide => slide.style.display = 'none');
-        console.log(slides.length);
         
         slides[slideIndex - 1].style.display = 'block';
     }

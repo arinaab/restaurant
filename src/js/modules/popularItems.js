@@ -25,7 +25,7 @@ const popularItems = () => {
                 <div class="popular__descr">
                     <div class="popular__subtitle">${subtitle}</div>
                     <div class="popular__grade"><span>&#9733;</span>${grade}</div>
-                    <button class="btn btn_popular">Add To Card</button>
+                    <button class="btn btn_popular">Add To Cart</button>
                     <div class="popular__price">${price}</div>
                 </div>
             `;
