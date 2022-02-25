@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_popularItems__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/popularItems */ "./src/js/modules/popularItems.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/social */ "./src/js/modules/social.js");
+/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cart */ "./src/js/modules/cart.js");
+
 
 
 
@@ -106,8 +108,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
   Object(_modules_popularItems__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', 'button[data-next]', 'button[data-prev]');
-  Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])(); // cart();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/cart.js":
+/*!********************************!*\
+  !*** ./src/js/modules/cart.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const cart = () => {
+  const btns = document.querySelectorAll('.btn_popular'),
+        items = document.querySelectorAll('.popular__item');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {});
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (cart);
 
 /***/ }),
 

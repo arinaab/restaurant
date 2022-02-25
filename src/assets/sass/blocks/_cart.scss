@@ -1,4 +1,4 @@
-.card {
+.cart {
     background-color:  rgba(29,29,29, .9);
     width: 1180px;
     min-height: 450px;
@@ -6,7 +6,7 @@
     top: 14%;
     left: 50%;
     transform: translate(-50%);
-    display: block;
+    display: none;
     &__items {
         display: flex;
     }
