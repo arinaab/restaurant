@@ -97,6 +97,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_popularItems__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/popularItems */ "./src/js/modules/popularItems.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/social */ "./src/js/modules/social.js");
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -104,6 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   Object(_modules_popularItems__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', 'button[data-next]', 'button[data-prev]');
+  Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 
 /***/ }),
@@ -211,6 +214,38 @@ const slider = (slideSelector, prevSelector, nextSelector) => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (slider);
+
+/***/ }),
+
+/***/ "./src/js/modules/social.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/social.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const social = () => {
+  const items = document.querySelectorAll('.social__item');
+  items.forEach(item => {
+    item.addEventListener('mouseover', function () {
+      let src = this.firstElementChild.firstElementChild.src; //находим тег img и src внутри него
+
+      let newSrc = src.replace(/.svg/, 'Copy.svg');
+      this.firstElementChild.firstElementChild.setAttribute('src', newSrc);
+      this.style.backgroundColor = '#F16214';
+    });
+    item.addEventListener('mouseout', function () {
+      let src = this.firstElementChild.firstElementChild.src;
+      let newSrc = src.replace(/copy.svg/i, '.svg');
+      this.firstElementChild.firstElementChild.setAttribute('src', newSrc);
+      this.style.backgroundColor = 'rgba(241, 98, 20, 0.15)';
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (social);
 
 /***/ })
 
