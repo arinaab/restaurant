@@ -1,0 +1,39 @@
+.footer {
+    min-height: 477px;
+    background-color:#F5F5F5;
+    padding: 100px 0 26px 0;
+    &__info {
+        width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        max-width: 271px;
+    }
+    &__subtitle {
+        font-weight: bold;
+        font-size: 22px;
+        color: #000000;
+        margin-bottom: 35px;
+    }
+    &__text {
+        font-size: 16px;
+        color: #888888;
+        line-height: 27px;
+        a {
+            display: block;
+            text-decoration: none;
+            color: #888888;
+        }
+    }
+    &__copy {
+        font-size: 15px;
+        color: #888888;
+        width: 300px;
+        margin: 23px auto 0;
+    }
+}
+.mb_20 {
+    margin-bottom: 20px;
+}

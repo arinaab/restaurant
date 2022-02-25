@@ -11,8 +11,14 @@
         background-color: rgba(241, 98, 20, 0.15);
         border-radius: 100%;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img {
-            vertical-align: bottom;
+            vertical-align: baseline;
         }
     }
+}
+.mt_33 {
+    margin-top: 33px;
 }

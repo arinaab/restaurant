@@ -89,7 +89,6 @@
         text-align: center;
         display: block;
         padding: 0;
-        margin-top: 0;
         font-weight: 500;
         border-radius: 13px;
         text-transform: uppercase;
@@ -97,5 +96,20 @@
         z-index: 2;
         margin-top: -54.5px;
         margin-left: 75%;
+    }
+    &_footer {
+        height: 40px;
+        width: 40px;
+        border-radius: 13px;
+        display: block;
+        text-align: center;
+        padding: 0;
+        padding-bottom: 4px;
+        position: relative;
+        top: -29%;
+        left: 83%;
+        span {
+            font-size: 20px;
+        }
     }
 }
