@@ -215,6 +215,7 @@ const popularItems = () => {
     });
   };
 
+  let counter = 0;
   getResource('../assets/db.json').then(res => {
     // console.log(res);
     createCards(res);
@@ -233,12 +234,15 @@ const popularItems = () => {
           items = document.querySelectorAll('.popular__item'),
           wrapper = document.querySelector('.cart__items'),
           cart = document.querySelector('.cart');
-    let counter = 0;
     btns.forEach((btn, i) => {
       btn.addEventListener('click', () => {
         let cloneItem = items[i].cloneNode(true);
         cloneItem.querySelector('.btn_popular').remove();
-        cloneItem.classList.add('popular__clone');
+        cloneItem.querySelector('.popular__grade').remove();
+        cloneItem.classList.add('popular__clone'); //change styles
+
+        cloneItem.querySelector('.popular__descr > .popular__subtitle').style.color = "#FFF";
+        cloneItem.querySelector('.popular__descr > .popular__price').style.color = "#FFF";
         wrapper.append(cloneItem);
         items[i].remove();
         document.querySelector('.element-cart').style.display = 'block';
