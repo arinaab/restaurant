@@ -1,12 +1,8 @@
 const cart = () => {
     const btns = document.querySelectorAll('.btn_popular'),
-          items = document.querySelectorAll('.popular__item');
+          item = document.querySelector('.popular__items');
 
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-
-        });
-    });
+    // console.log(item.firstElementChild);
 };
 
 export default cart;

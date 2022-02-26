@@ -12,7 +12,7 @@ const popularItems = () => {
 
     const createCards = (response) => {
         // console.log(response);
-        console.log(response.items);
+        // console.log(response.items);
         let items = response.items;
         items.forEach(({src, alt, subtitle, grade, price}) => {
 
@@ -44,7 +44,7 @@ const popularItems = () => {
     document.querySelector('.btn_more').addEventListener('click', (event) => {
         getResourse('../assets/db.json')
         .then(res => {
-                console.log(res);
+                // console.log(res);
                 createCards(res);
         });
     });

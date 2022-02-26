@@ -99,6 +99,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/social */ "./src/js/modules/social.js");
 /* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cart */ "./src/js/modules/cart.js");
+/* harmony import */ var _modules_learnMore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/learnMore */ "./src/js/modules/learnMore.js");
+
 
 
 
@@ -108,7 +110,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   Object(_modules_popularItems__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', 'button[data-next]', 'button[data-prev]');
-  Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])(); // cart();
+  Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules_cart__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_modules_learnMore__WEBPACK_IMPORTED_MODULE_4__["default"])('.btn_mt', '.subtitle_dn');
 });
 
 /***/ }),
@@ -124,13 +128,32 @@ window.addEventListener('DOMContentLoaded', () => {
 __webpack_require__.r(__webpack_exports__);
 const cart = () => {
   const btns = document.querySelectorAll('.btn_popular'),
-        items = document.querySelectorAll('.popular__item');
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {});
-  });
+        item = document.querySelector('.popular__items'); // console.log(item.firstElementChild);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (cart);
+
+/***/ }),
+
+/***/ "./src/js/modules/learnMore.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/learnMore.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const learnMore = (btnSelector, textSelector) => {
+  const btn = document.querySelector(btnSelector),
+        text = document.querySelector(textSelector);
+  btn.addEventListener('click', e => {
+    e.target.remove();
+    text.style.display = 'block';
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (learnMore);
 
 /***/ }),
 
@@ -156,7 +179,7 @@ const popularItems = () => {
 
   const createCards = response => {
     // console.log(response);
-    console.log(response.items);
+    // console.log(response.items);
     let items = response.items;
     items.forEach(_ref => {
       let {
@@ -189,7 +212,7 @@ const popularItems = () => {
   });
   document.querySelector('.btn_more').addEventListener('click', event => {
     getResourse('../assets/db.json').then(res => {
-      console.log(res);
+      // console.log(res);
       createCards(res);
     });
   });
