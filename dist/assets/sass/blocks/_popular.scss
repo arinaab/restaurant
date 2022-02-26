@@ -9,7 +9,7 @@
     }
     &__item {
         max-width: 370px;
-        min-height: 419px;
+        min-height: 360px;
         border: 1px solid rgb(236, 227, 227);
         border-radius: 50px 0px;
         box-shadow: 0px 2px 10px #d2cccc;
@@ -28,6 +28,7 @@
         grid-template-columns: 151px 48px;
         grid-template-rows: 42px 40px;
         gap: 19px 134px;
+        // background-color: #fff;
     }
     &__subtitle {
         font-weight: bold;
@@ -49,4 +50,16 @@
         font-size: 20px;
         color: #000000;
     }
+    &__clone {
+        max-width: 370px;
+        max-height: 380px;
+        border: 1px solid rgb(236, 227, 227);
+        border-radius: 50px 0px;
+        box-shadow: 0px 2px 10px #d2cccc;
+        border-top: none;
+        &:hover {
+            box-shadow: 0px 9px 30px rgb(214, 207, 207);
+        }
+    }
+
 }

@@ -1,6 +1,6 @@
 const popularItems = () => {
 
-    const getResourse = async (path) => {
+    const getResource = async (path) => {
         const res = await fetch(path);
 
         if (!res.ok) {
@@ -34,20 +34,47 @@ const popularItems = () => {
         });
     };
 
-    getResourse('../assets/db.json')
+    getResource('../assets/db.json')
         .then(res => {
-            console.log(res);
+            // console.log(res);
             createCards(res);
+            addToCart();
         });
 
 
     document.querySelector('.btn_more').addEventListener('click', (event) => {
-        getResourse('../assets/db.json')
+        getResource('../assets/db.json')
         .then(res => {
-                // console.log(res);
-                createCards(res);
+            // console.log(res);
+            createCards(res);
+            addToCart();
         });
     });
+
+    const addToCart = () => {
+        const btns = document.querySelectorAll('.btn_popular'),
+              items = document.querySelectorAll('.popular__item'),
+              wrapper = document.querySelector('.cart__items'),
+              cart = document.querySelector('.cart');
+              let counter = 0;
+              
+        
+        btns.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                let cloneItem = items[i].cloneNode(true);
+
+                cloneItem.querySelector('.btn_popular').remove();
+
+                cloneItem.classList.add('popular__clone');
+
+                wrapper.append(cloneItem);
+                items[i].remove();
+
+                document.querySelector('.element-cart').style.display = 'block';
+                document.querySelector('.element-cart > span').textContent = ++counter;
+            });
+        });
+    };
 };
 
 export default popularItems;

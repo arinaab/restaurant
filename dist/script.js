@@ -98,8 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_popularItems__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/popularItems */ "./src/js/modules/popularItems.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_social__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/social */ "./src/js/modules/social.js");
-/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cart */ "./src/js/modules/cart.js");
-/* harmony import */ var _modules_learnMore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/learnMore */ "./src/js/modules/learnMore.js");
+/* harmony import */ var _modules_learnMore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/learnMore */ "./src/js/modules/learnMore.js");
+/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/cart */ "./src/js/modules/cart.js");
 
 
 
@@ -111,8 +111,8 @@ window.addEventListener('DOMContentLoaded', () => {
   Object(_modules_popularItems__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider__item', 'button[data-next]', 'button[data-prev]');
   Object(_modules_social__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  Object(_modules_cart__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  Object(_modules_learnMore__WEBPACK_IMPORTED_MODULE_4__["default"])('.btn_mt', '.subtitle_dn');
+  Object(_modules_learnMore__WEBPACK_IMPORTED_MODULE_3__["default"])('.btn_mt', '.subtitle_dn');
+  Object(_modules_cart__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 
 /***/ }),
@@ -127,8 +127,17 @@ window.addEventListener('DOMContentLoaded', () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const cart = () => {
-  const btns = document.querySelectorAll('.btn_popular'),
-        item = document.querySelector('.popular__items'); // console.log(item.firstElementChild);
+  const elem = document.querySelector('.element-cart'),
+        cart = document.querySelector('.cart'),
+        close = cart.querySelector('.cart__close');
+  elem.addEventListener('click', () => {
+    cart.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+  close.addEventListener('click', () => {
+    cart.style.display = 'none';
+    document.body.style.overflow = '';
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (cart);
@@ -167,7 +176,7 @@ const learnMore = (btnSelector, textSelector) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 const popularItems = () => {
-  const getResourse = async path => {
+  const getResource = async path => {
     const res = await fetch(path);
 
     if (!res.ok) {
@@ -206,16 +215,37 @@ const popularItems = () => {
     });
   };
 
-  getResourse('../assets/db.json').then(res => {
-    console.log(res);
+  getResource('../assets/db.json').then(res => {
+    // console.log(res);
     createCards(res);
+    addToCart();
   });
   document.querySelector('.btn_more').addEventListener('click', event => {
-    getResourse('../assets/db.json').then(res => {
+    getResource('../assets/db.json').then(res => {
       // console.log(res);
       createCards(res);
+      addToCart();
     });
   });
+
+  const addToCart = () => {
+    const btns = document.querySelectorAll('.btn_popular'),
+          items = document.querySelectorAll('.popular__item'),
+          wrapper = document.querySelector('.cart__items'),
+          cart = document.querySelector('.cart');
+    let counter = 0;
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        let cloneItem = items[i].cloneNode(true);
+        cloneItem.querySelector('.btn_popular').remove();
+        cloneItem.classList.add('popular__clone');
+        wrapper.append(cloneItem);
+        items[i].remove();
+        document.querySelector('.element-cart').style.display = 'block';
+        document.querySelector('.element-cart > span').textContent = ++counter;
+      });
+    });
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (popularItems);
