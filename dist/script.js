@@ -216,13 +216,13 @@ const popularItems = () => {
   };
 
   let counter = 0;
-  getResource('../assets/db.json').then(res => {
+  getResource('assets/db.json').then(res => {
     // console.log(res);
     createCards(res);
     addToCart();
   });
   document.querySelector('.btn_more').addEventListener('click', event => {
-    getResource('../assets/db.json').then(res => {
+    getResource('assets/db.json').then(res => {
       // console.log(res);
       createCards(res);
       addToCart();

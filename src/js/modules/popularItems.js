@@ -36,7 +36,7 @@ const popularItems = () => {
 
     let counter = 0;
 
-    getResource('../assets/db.json')
+    getResource('assets/db.json')
         .then(res => {
             // console.log(res);
             createCards(res);
@@ -45,7 +45,7 @@ const popularItems = () => {
 
 
     document.querySelector('.btn_more').addEventListener('click', (event) => {
-        getResource('../assets/db.json')
+        getResource('assets/db.json')
         .then(res => {
             // console.log(res);
             createCards(res);
